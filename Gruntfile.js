@@ -8,7 +8,7 @@
 // If you want to recursively match all subfolders, use:
 // 'test/spec/**/*.js'
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -80,6 +80,23 @@ module.exports = function (grunt) {
               '/bower_components': './bower_components'
             }
           }
+        }
+      },
+      copy: {
+        dist: {
+          files: [{
+            expand: true,
+            dest: '<%= yeoman.dist %>',
+            cwd: 'heroku',
+            src: '*',
+            rename: function(dest, src) {
+              var path = require('path');
+              if (src === 'distpackage.json') {
+                return path.join(dest, 'package.json');
+              }
+              return path.join(dest, src);
+            }
+          }]
         }
       },
       test: {
@@ -384,7 +401,7 @@ module.exports = function (grunt) {
   });
 
 
-  grunt.registerTask('serve', 'start the server and preview your app', function (target) {
+  grunt.registerTask('serve', 'start the server and preview your app', function(target) {
 
     if (target === 'dist') {
       return grunt.task.run(['build', 'browserSync:dist']);
@@ -400,12 +417,12 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', function (target) {
+  grunt.registerTask('server', function(target) {
     grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
     grunt.task.run([target ? ('serve:' + target) : 'serve']);
   });
 
-  grunt.registerTask('test', function (target) {
+  grunt.registerTask('test', function(target) {
     if (target !== 'watch') {
       grunt.task.run([
         'clean:server',
