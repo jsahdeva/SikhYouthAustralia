@@ -1,0 +1,25 @@
+{
+  "name": "sya",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.5",
+    "modernizr": "~2.8.3",
+    "EventDrops": "https://github.com/marmelab/EventDrops.git#^0.1.2",
+    "block-scroll": "https://github.com/DominikGorecki/block-scroll.git#^1.0.3",
+    "font-awesome": "https://github.com/FortAwesome/Font-Awesome.git#^4.6.1",
+    "tinycon": "https://github.com/tommoor/tinycon.git#^0.6.5"
+  },
+  "overrides": {
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/fonts/bootstrap/*",
+        "assets/javascripts/bootstrap.js"
+      ]
+    }
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
