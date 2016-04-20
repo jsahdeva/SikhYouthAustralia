@@ -1,1 +1,3 @@
-$(document).ready(function(){$('[data-toggle="tooltip"]').tooltip(),$('.navbar a, footer a[href=""#myPage"]').on("click",function(a){a.preventDefault();var b=this.hash;$("html, body").animate({scrollTop:$(b).offset().top},900,function(){window.location.hash=b})}),$(".carousel").carousel({interval:7e3})});
+$(document).ready(function() {
+
+});
