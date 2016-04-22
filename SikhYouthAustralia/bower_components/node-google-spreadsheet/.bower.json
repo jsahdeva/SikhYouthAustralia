@@ -1,0 +1,15 @@
+{
+  "name": "node-google-spreadsheet",
+  "homepage": "https://github.com/theoephraim/node-google-spreadsheet",
+  "version": "0.1.0",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.0",
+    "commit": "bfa6a2cce49a3025605b8c06579d172c15f4111d"
+  },
+  "_source": "https://github.com/theoephraim/node-google-spreadsheet.git",
+  "_target": "^0.1.0",
+  "_originalSource": "https://github.com/theoephraim/node-google-spreadsheet.git",
+  "_direct": true
+}
