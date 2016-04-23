@@ -65,17 +65,20 @@ h3, h4 {
   margin-top: 15px;
   color: #555;
 }
-.btn {
+.btn-primary {
   padding: 10px 20px;
-  background-color: #333;
-  color: #f1f1f1;
-  border-radius: 0;
+  background-color: #337ab7;
+  color: orange;
+  border-radius: 20px;
   transition: 0.2s;
 }
-.btn:hover, .btn:focus {
-  border: 1px solid #333;
+.btn-primary:hover, .btn:focus {
+  border: 1px solid orange;
   background-color: #fff;
-  color: #000;
+  color: black;
+}
+.action-message {
+  margin: 70px 0;
 }
 .modal-header, .close {
   background-color: #333;
