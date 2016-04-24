@@ -54,6 +54,10 @@
               <a href="#contact" style="font-size: 20px;">Contact</a>
             </li>
             <li>
+              <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+              <div id="status"></div>
+            </li>
+            <li>
               <a href="#">
                 <span class="glyphicon glyphicon-search" style="font-size: 20px;"></span>
 
@@ -208,9 +212,9 @@
             <a href="#">
               <i class="fa fa-lg fa-linkedin"></i>
             </a>
+            <i><div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div></i>
           </div>
           <div class="col-xs-3">
-            <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
             <ul class="list-unstyled no-title list-inline ficon-2x text-right">
               <li>
                 <a href="https://twitter.com/getfortawesome">
