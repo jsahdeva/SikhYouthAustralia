@@ -332,7 +332,7 @@ a:link, a:visited {
   background-color: #336699;
   border-radius: 20px;
   border-color: orange;
-  border-width: thin;
+  border: 2px solid orange;
   padding-bottom: 20px;
   padding-top: 20px;
 }

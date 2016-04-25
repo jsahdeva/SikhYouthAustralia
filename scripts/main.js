@@ -69,18 +69,32 @@ $(document).ready(function() {
   }
 
   var events;
+
   $.ajax(settings)
 
   .done(function(response) {
-      events = response;
+      events = response.events.map(function(event, index) {
+        var retVal = {};
+        events: {
+          retVal.start = {
+            time: moment(event.start.local).format('dddd, MMMM Do YYYY, h:mm:ss a'),
+            timezone: event.start.timezone
+          };
+          retVal.end = {
+            time: moment(event.end.local).format('dddd, MMMM Do YYYY, h:mm:ss a'),
+            timezone: event.start.timezone
+          };
+          retVal.name = event.name.text;
+          retVal.url = event.url;
+          retVal.image = event.logo.url;
+          retVal.capacity = event.capacity;
+        }
+        return retVal;
+      });
       console.log(response);
-      console.log(JSON.stringify({
-        events: events.events
-      }));
+      console.log(JSON.stringify(events));
       var compiledEvents = Handlebars.getTemplate('events');
-      $('#events').append(compiledEvents({
-        events: events.events
-      }));
+      $('#events').append(compiledEvents(events));
     })
     .fail(function(response) {
       console.log(response.statusText);
