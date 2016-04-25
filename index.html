@@ -14,6 +14,7 @@
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/css-social-buttons/css/zocial.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -54,13 +55,20 @@
               <a href="#contact" style="font-size: 20px;">Contact</a>
             </li>
             <li>
-              <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-              <div id="status"></div>
+              <button class="zocial facebook" scope="public_profile,email" onclick="hello('facebook').login();"></button>
+            </li>
+            <li>
+              <button class="zocial google" onclick="hello('google').login();">Google+</button>
+            </li>
+            <li>
+              <button class="zocial eventbrite" onclick="hello('eventbrite').login();">eventbrite</button>
+            </li>
+            <li>
+              <button class="zocial linkedin" onclick="hello('linkedin').login();">linkedin</button>
             </li>
             <li>
               <a href="#">
                 <span class="glyphicon glyphicon-search" style="font-size: 20px;"></span>
-
               </a>
             </li>
           </ul>
@@ -70,6 +78,7 @@
     </nav>
     <div class="jumbotron jumbotron-hero frontsection">
       <div class="row-fluid">
+        <div id="status"></div>
         <div class="span10 offsetHalf">
           <i class="icon-screenshot icon-5x" style="color:#ee1111;"></i>
         </div>
@@ -129,7 +138,7 @@
     </div>
     <div id="camps" class="jumbotron jumbotron-hero">
 
-      <h4 class="pull-center display-1">2015 Camp</h4>
+      <h1 class="pull-center display-1" style="color:orange;">2015 Camp</h1>
 
       <div class="row-fluid">
         <div class="span9 offsetHalf1" id="slider">
@@ -139,12 +148,14 @@
               <div id="myCarousel1" class="carousel slide">
 
                 <div class="carousel-inner">
-                  <div class="active item" data-slide-number="0"><img class="img-rounded" src="images/camp1.jpg" width="500" height="100"></div>
-                  <div class="item" data-slide-number="1"><img class="img-rounded" src="images/camp2.jpg" width="500" height="100"></div>
-                  <div class="item" data-slide-number="2"><img class="img-rounded" src="images/camp3.jpg" width="500" height="100"></div>
-                  <div class="item" data-slide-number="3"><img class="img-rounded" src="images/camp4.jpg" width="500" height="100"></div>
-                  <div class="item" data-slide-number="4"><img class="img-rounded" src="images/camp5.jpg" width="500" height="100"></div>
-                  <div class="item" data-slide-number="5"><img class="img-rounded" src="images/camp6.jpg" width="500" height="100"></div>
+                  <div class="active item" data-slide-number="0">
+                    <img class="img-rounded" src="images/camp1.jpg"></img>
+                  </div>
+                  <div class="item" data-slide-number="1"><img class="img-rounded" src="images/camp2.jpg"></div>
+                  <div class="item" data-slide-number="2"><img class="img-rounded" src="images/camp3.jpg"></div>
+                  <div class="item" data-slide-number="3"><img class="img-rounded" src="images/camp4.jpg"></div>
+                  <div class="item" data-slide-number="4"><img class="img-rounded" src="images/camp5.jpg"></div>
+                  <div class="item" data-slide-number="5"><img class="img-rounded" src="images/camp6.jpg"></div>
                 </div>
 
               </div>
@@ -165,7 +176,12 @@
         </a>
       </div> -->
     </div>
-
+    <div class="jumbotron jumbotron-hero">
+      <h1 class="pull-center display-1" style="color:orange">
+        Events
+      </h1>
+      <div id="events" class="thumbnailEvent"></div>
+    </div>
     <div id="contactUs" class="footer">
       <div class="row-fluid">
         <!-- <a class="up-arrow" href="/" data-toggle="tooltip" title="TO TOP">
@@ -212,7 +228,9 @@
             <a href="#">
               <i class="fa fa-lg fa-linkedin"></i>
             </a>
-            <i><div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div></i>
+            <i>
+              <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
+            </i>
           </div>
           <div class="col-xs-3">
             <ul class="list-unstyled no-title list-inline ficon-2x text-right">
@@ -274,6 +292,7 @@
     <script src="/bower_components/EventDrops/src/eventDrops.js"></script>
     <script src="/bower_components/tinycon/tinycon.js"></script>
     <script src="/bower_components/hello/dist/hello.all.min.js"></script>
+    <script src="/bower_components/handlebars/handlebars.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -284,6 +303,7 @@
     <script src="bower_components/EventDrops/src/eventDrops.js"></script>
     <script src="bower_components/tinycon/tinycon.js"></script>
     <script src="bower_components/hello/dist/hello.all.min.js"></script>
+
     <script scr="bower_components/node-google-spreadsheet/lib/spreadsheet.js"></script>
     <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
     <script src="bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
@@ -303,6 +323,8 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/facebook.js"></script>
+    <script src="scripts/oauth2.js"></script>
+    <script src="scripts/templates.js"></script>
     <!-- endbuild -->
   </body>
 </html>

@@ -71,6 +71,7 @@ h3, h4 {
   color: orange;
   border-radius: 20px;
   transition: 0.2s;
+  border: 1px solid #333;
 }
 .btn-primary:hover, .btn:focus {
   border: 1px solid orange;
@@ -282,4 +283,59 @@ a:link, a:visited {
   -moz-animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
   -moz-animation-timing-function: linear;
+}
+
+/* Remove rounded borders from list */
+
+.list-group-item:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.list-group-item:last-child {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Remove border and add padding to thumbnails */
+
+.thumbnailEvent {
+  padding: 0 0 15px 0;
+  border: 2px;
+  border-radius: 20px;
+  border-color: orange;
+}
+.thumbnail p {
+  margin-top: 15px;
+  color: orange;
+}
+
+/* Black buttons with extra padding and without rounded borders */
+
+.btnEvent {
+  padding: 10px 20px;
+  background-color: orange;
+  color: #336699;
+  border-radius: 20px;
+  transition: .2s;
+  border: 1px solid #333;
+}
+
+/* On hover, the color of .btn will transition to white with black text */
+
+.btnEvent:hover, .btn:focus {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid orange;
+}
+
+.events{
+  background-color: #336699;
+  border-radius: 20px;
+  border-color: orange;
+  border-width: thin;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.eventText{
+  color: orange;
 }

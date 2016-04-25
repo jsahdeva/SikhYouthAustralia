@@ -1,0 +1,16 @@
+<div class="row text-center">
+  {{#eachEvent events}}
+    <div class="col-sm-4">
+      <div class="events">
+        <img src= {{logo.url}} alt= {{name.txt}}>
+        <p><strong class="eventText">{{name.text}}</strong></p>
+        <p class="eventText">Start Time: {{start.local}} - {{start.timezone}}</p>
+        <p class="eventText">End Time: {{end.local}} - {{end.timezone}}</p>
+        </p>
+        <a href="{{url}}" class="eventText">More about this event</a>
+        <p class="eventText">Capacity: {{capacity}}</p>
+        <button class="btnEvent">Buy Tickets</button>
+      </div>
+    </div>
+  {{/eachEvent}}
+</div>
