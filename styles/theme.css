@@ -327,8 +327,7 @@ a:link, a:visited {
   color: #000;
   border: 1px solid orange;
 }
-
-.events{
+.events {
   background-color: #336699;
   border-radius: 20px;
   border-color: orange;
@@ -336,6 +335,13 @@ a:link, a:visited {
   padding-bottom: 20px;
   padding-top: 20px;
 }
-.eventText{
+.whatIsSYA {
+  border-radius: 5px;
+  border-color: white;
+  border: 1px solid white;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.eventText {
   color: orange;
 }

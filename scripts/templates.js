@@ -16,7 +16,15 @@ this["Handlebars"]["templates"]["app/templates/events.handlebars"] = Handlebars.
     + alias4(alias5(((stack1 = (depth0 != null ? depth0.end : depth0)) != null ? stack1.time : stack1), depth0))
     + "</span>\n          </li>\n          <li>\n            <span class=\"eventText\">Capacity : "
     + alias4(((helper = (helper = helpers.capacity || (depth0 != null ? depth0.capacity : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"capacity","hash":{},"data":data}) : helper)))
-    + "</span>\n          </li>\n        </ul>\n        <button class=\"btnEvent\" onclick=\"window.open('"
+    + "</span>\n          </li>\n          <li>\n            <address>\n              <strong class=\"eventText\">"
+    + alias4(alias5(((stack1 = (depth0 != null ? depth0.venue : depth0)) != null ? stack1.address_1 : stack1), depth0))
+    + "</strong><br>\n              <span class=\"eventText\">"
+    + alias4(alias5(((stack1 = (depth0 != null ? depth0.venue : depth0)) != null ? stack1.address_2 : stack1), depth0))
+    + "</span>\n              <span class=\"eventText\">"
+    + alias4(alias5(((stack1 = (depth0 != null ? depth0.venue : depth0)) != null ? stack1.city : stack1), depth0))
+    + ", "
+    + alias4(alias5(((stack1 = (depth0 != null ? depth0.venue : depth0)) != null ? stack1.postal_code : stack1), depth0))
+    + "</span>\n            </address>\n          </li>\n        </ul>\n        <button class=\"btnEvent\" onclick=\"window.open('"
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "')\">Register</button>\n      </div>\n    </div>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

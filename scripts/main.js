@@ -60,10 +60,19 @@ $(document).ready(function() {
     return Handlebars.templates[name];
   };
 
+
+  function getMeta(url, callback) {
+    var img = new Image();
+    img.addEventListener('load', function() {
+      callback(this.width, this.height);
+    });
+    img.src = url;
+  }
+
   var settings = {
     'async': true,
     'crossDomain': true,
-    'url': 'https://www.eventbriteapi.com/v3/users/me/owned_events/?status=live&token=ZEZL3HY5IL2RACNCJTQU&expand=logo',
+    'url': 'https://www.eventbriteapi.com/v3/users/me/owned_events/?status=live&token=ZEZL3HY5IL2RACNCJTQU&expand=logo&expand=venue',
     'method': 'GET',
     'headers': {}
   }
@@ -82,7 +91,17 @@ $(document).ready(function() {
           };
           retVal.end = {
             time: moment(event.end.local).format('dddd, MMMM Do YYYY, h:mm:ss a'),
-            timezone: event.start.timezone
+            timezone: event.end.timezone
+          };
+          retVal.venue = {
+            address_1: event.venue.address.address_1,
+            address_2: event.venue.address.address_2,
+            city: event.venue.address.city,
+            region: event.venue.address.region,
+            postal_code: event.venue.address.postal_code,
+            country: event.venue.address.country,
+            latitude: event.venue.address.latitude,
+            longitude: event.venue.address.longitude
           };
           retVal.name = event.name.text;
           retVal.url = event.url;
@@ -95,10 +114,22 @@ $(document).ready(function() {
       console.log(JSON.stringify(events));
       var compiledEvents = Handlebars.getTemplate('events');
       $('#events').append(compiledEvents(events));
+      getMeta(events[2].image, function(width, height) {
+        $('img.event, img.camp, img.news, img.media').attr('height', height);
+        $('img.event, img.camp, img.news, img.media').attr('width', width);
+        //alert(height);
+      });
+      $('img.event').attr('src', events[0].image);
+
+      $('img.camp').attr('src', events[1].image);
+      $('img.news').attr('src', events[2].image);
+      $('img.media').attr('src', events[1].image);
     })
     .fail(function(response) {
       console.log(response.statusText);
     });
+
+
 
 
 
